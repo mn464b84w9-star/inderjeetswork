@@ -3,9 +3,9 @@ import { Phone, Mail, Linkedin, Github } from "lucide-react";
 
 const contacts = [
   { icon: Phone, label: "Phone", value: "7357987320", href: "tel:7357987320" },
-  { icon: Mail, label: "Email", value: "your@email.com", href: "mailto:your@email.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "LinkedIn Profile", href: "https://linkedin.com" },
-  { icon: Github, label: "GitHub", value: "GitHub Profile", href: "https://github.com" },
+  { icon: Mail, label: "Email", value: "theinderjeet52@gmail.com", href: "mailto:theinderjeet52@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "LinkedIn Profile", href: "https://www.linkedin.com/in/" },
+  { icon: Github, label: "GitHub", value: "GitHub Profile", href: "https://github.com/mn464b84w9-star" },
 ];
 
 const Contact = () => {

@@ -7,12 +7,14 @@ const projects = [
     description: "A modern personal portfolio website designed to showcase skills, projects, and professional profile with responsive design and clean UI.",
     tech: ["HTML", "CSS", "GitHub", "Vercel"],
     status: "Deployed",
+    showLiveLink: false,
   },
   {
     title: "Gym Website Project",
     description: "A responsive business-style gym website designed to showcase services, information, and modern UI layout.",
     tech: ["HTML", "CSS", "GitHub", "Vercel"],
     status: "Deployed",
+    showLiveLink: true,
   },
 ];
 
@@ -58,9 +60,11 @@ const Projects = () => {
                 ))}
               </div>
 
-              <button className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-                View Live <ExternalLink className="w-3.5 h-3.5" />
-              </button>
+              {project.showLiveLink && (
+                <button className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+                  View Live <ExternalLink className="w-3.5 h-3.5" />
+                </button>
+              )}
             </div>
           ))}
         </div>
