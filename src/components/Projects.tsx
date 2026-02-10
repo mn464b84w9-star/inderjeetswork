@@ -8,6 +8,7 @@ const projects = [
     tech: ["HTML", "CSS", "GitHub", "Vercel"],
     status: "Deployed",
     showLiveLink: false,
+    liveLink: "",
   },
   {
     title: "Gym Website Project",
@@ -15,6 +16,7 @@ const projects = [
     tech: ["HTML", "CSS", "GitHub", "Vercel"],
     status: "Deployed",
     showLiveLink: true,
+    liveLink: "https://ironparadisegym.vercel.app/",
   },
 ];
 
@@ -60,10 +62,10 @@ const Projects = () => {
                 ))}
               </div>
 
-              {project.showLiveLink && (
-                <button className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+              {project.showLiveLink && project.liveLink && (
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
                   View Live <ExternalLink className="w-3.5 h-3.5" />
-                </button>
+                </a>
               )}
             </div>
           ))}
