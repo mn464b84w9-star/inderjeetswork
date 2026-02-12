@@ -65,9 +65,28 @@ const Projects = () => {
             </h3>
             <p className="text-xs text-muted-foreground/60 mb-3 font-medium">Private Client Project</p>
 
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              A custom SaaS platform architected for a civil engineering firm. Manages labor tracking across multiple municipalities with strict data partitioning. Features secure role-based authentication, real-time payroll logic, and automated report generation.
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+              A custom SaaS platform architected for a civil engineering firm. Manages labor tracking across multiple municipalities with strict data partitioning.
             </p>
+
+            <ul className="text-xs text-muted-foreground/80 leading-relaxed mb-4 space-y-1.5 list-none">
+              <li className="flex items-start gap-1.5">
+                <span className="text-yellow-400/70 mt-0.5">▸</span>
+                <span>Shared-link access — teammates submit data via temporary entry links without login</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-yellow-400/70 mt-0.5">▸</span>
+                <span>Site-specific folder management with dynamic data routing to global & local tables</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-yellow-400/70 mt-0.5">▸</span>
+                <span>Real-time cumulative labor calculations with auto day-of-week tagging</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-yellow-400/70 mt-0.5">▸</span>
+                <span>Role-based admin auth, sidebar navigation & mobile-first responsive UI</span>
+              </li>
+            </ul>
 
             <div className="flex flex-wrap gap-2 mb-4">
               {["React", "Supabase", "Lovable AI"].map((t) => (
