@@ -1,5 +1,22 @@
 import Section from "@/components/Section";
-import { ExternalLink, Lock, ShieldCheck } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    title: "Personal Portfolio Website",
+    description: "A modern personal portfolio website designed to showcase skills, projects, and professional profile with responsive design and clean UI.",
+    tech: ["HTML", "CSS", "GitHub", "Vercel"],
+    status: "Deployed",
+    showLiveLink: false,
+  },
+  {
+    title: "Gym Website Project",
+    description: "A responsive business-style gym website designed to showcase services, information, and modern UI layout.",
+    tech: ["HTML", "CSS", "GitHub", "Vercel"],
+    status: "Deployed",
+    showLiveLink: true,
+  },
+];
 
 const Projects = () => {
   return (
@@ -13,99 +30,43 @@ const Projects = () => {
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Gym Website Project */}
-          <div className="glass rounded-xl p-6 hover-lift glass-hover group relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-lg font-semibold text-foreground">Gym Website Project</h3>
-              <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
-                Deployed
-              </span>
-            </div>
-
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              A responsive business-style gym website designed to showcase services, information, and modern UI layout.
-            </p>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["HTML", "CSS", "GitHub", "Vercel"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <a href="https://ironparadisegym.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-              View Live <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          {/* Civil Site Labor Management System — NDA Protected */}
-          <div className="glass rounded-xl p-6 relative overflow-hidden border border-muted/30">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent" />
-
-            {/* NDA Badge */}
-            <div className="absolute top-3 right-3">
-              <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-yellow-500/15 text-yellow-400 font-semibold border border-yellow-500/20 uppercase tracking-wider">
-                <ShieldCheck className="w-3 h-3" /> NDA Protected
-              </span>
-            </div>
-
-            {/* Lock Icon */}
-            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 border border-muted mb-4">
-              <Lock className="w-6 h-6 text-muted-foreground/60" />
-            </div>
-
-            <h3 className="text-lg font-semibold text-foreground mb-1">
-              Civil Site Labor Management System
-            </h3>
-            <p className="text-xs text-muted-foreground/60 mb-3 font-medium">Private Client Project</p>
-
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              A custom SaaS platform architected for a civil engineering firm. Manages labor tracking across multiple municipalities with strict data partitioning.
-            </p>
-
-            <ul className="text-xs text-muted-foreground/80 leading-relaxed mb-4 space-y-1.5 list-none">
-              <li className="flex items-start gap-1.5">
-                <span className="text-yellow-400/70 mt-0.5">▸</span>
-                <span>Shared-link access — teammates submit data via temporary entry links without login</span>
-              </li>
-              <li className="flex items-start gap-1.5">
-                <span className="text-yellow-400/70 mt-0.5">▸</span>
-                <span>Site-specific folder management with dynamic data routing to global & local tables</span>
-              </li>
-              <li className="flex items-start gap-1.5">
-                <span className="text-yellow-400/70 mt-0.5">▸</span>
-                <span>Real-time cumulative labor calculations with auto day-of-week tagging</span>
-              </li>
-              <li className="flex items-start gap-1.5">
-                <span className="text-yellow-400/70 mt-0.5">▸</span>
-                <span>Role-based admin auth, sidebar navigation & mobile-first responsive UI</span>
-              </li>
-            </ul>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "Supabase", "Lovable AI"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <button
-              disabled
-              className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-md bg-muted/40 text-muted-foreground/50 font-medium cursor-not-allowed border border-muted/30"
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              className="glass rounded-xl p-6 hover-lift glass-hover group relative overflow-hidden"
             >
-              <Lock className="w-3 h-3" /> Internal Tool Only
-            </button>
-          </div>
+              {/* Subtle top accent */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
+                <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                  {project.status}
+                </span>
+              </div>
+
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {project.showLiveLink && (
+                <button className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+                  View Live <ExternalLink className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </Section>
